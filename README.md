@@ -14,15 +14,24 @@ The code itself does not require installation; however, there are some packages 
 4. “Channel_Fun.py” includes the functions for channel head identification. 
 
 ## c. Inputs
-Before running the code, there are some parameters which should be set in “Run.py” including;
-1. “TauDEM” toolbox folder path which is specified during the installation of “TauDEM”. 
-2. Output folder path
-3. DEM file path. Using tiff file is recommended. The code uses the spatial reference and the extent of the DEM for all other maps which are generated. 
-4. The pixel size of the DEM. 
+Before running the code, there are some parameters which should be set in “Run.py” including.
+
+1. “TauDEM” toolbox folder path which is specified during the installation of “TauDEM”.
+
+2. Output folder path.
+
+3. DEM file path. Using tiff file is recommended. The code uses the spatial reference and the extent of the DEM for all other maps which are generated.
+
+4. The pixel size of the DEM.
+
 5. The unit of the DEM (m or ft). 
+
 6. The number of iteration of the Perona-Malik nonlinear filter. This parameter specifies the amount of smoothing on the DEM. The default value is 50. 
+
 7. Connecting parameter. This parameter indirectly specifies the minimum length of gaps in the network. If the parameter increases, isolated segments are more likely to get connected to the network. The default value is 20 m. 
+
 8. The number of contours. This specifies the number of contours for clustering in each tributary. The default value is 30.
+
 
 After setting the parameters, one can execute “Run.py” to extract the valley and channel networks. The output files will be saved in a folder called “maps” in the specified Output folder path. 
  
