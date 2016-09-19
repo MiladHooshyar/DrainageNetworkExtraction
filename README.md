@@ -15,8 +15,11 @@ The code itself does not require installation; however, there are some packages 
 ## B. Code structure
 
 1. “Run.py” is the file for setting the parameters and running the code. 
+
 2. “Valley_Channel_Extraction.py” is the main code which calls the functions from “Channel_Fun.py” and “Valley_Fun.py” to delineate valley and channel networks. 
+
 3. “Valley_Fun.py” contains the functions for valley network delineation. 
+
 4. “Channel_Fun.py” includes the functions for channel head identification. 
 
 ## C. Inputs
