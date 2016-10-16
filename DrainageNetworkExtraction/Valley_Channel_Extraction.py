@@ -6,7 +6,7 @@ import os
 import shutil
 
 def main(TauDEM_path , output_folder_path , DEM_file_path, cell_size, unit, \
-            num_iter, connect_ratio, number_contour):
+            num_iter, connect_ratio, number_contour , option_channel_head):
 
         arcpy.ImportToolbox(TauDEM_path)
 
@@ -92,15 +92,18 @@ def main(TauDEM_path , output_folder_path , DEM_file_path, cell_size, unit, \
         Valley_Fun.stream_order(map_file_path, map_file_path, 'Valley_Network.tif' , 'Modified_Fdir_8.tif' ,'Valley_Network_Order.tif')
         Valley_Fun.find_por_point(map_file_path , text_file_path	, 'Valley_Network.tif' , 'Fill_Dem.tif' ,'Modified_Fdir_8.tif' , 'Modified_Facc_8.tif' ,'Valley_Network_Order.tif' , 'por_point')
 
-        print '7. Channel Head Extraction'
-        head_ele = Channel_Fun.channel_head_find(por_file_path , map_file_path, text_file_path , 'Modified_Facc_8.tif' , 'Modified_Fdir_8.tif', 'Curvature.tif' ,'Fill_Dem.tif' ,80 , \
-        number_contour , 'contour_cluster' , 0)
-        arcpy.env.extent = DEM_file_path
-        Valley_Fun.head_delete(map_file_path , map_file_path  , 'Fill_Dem.tif' , 'Valley_Network.tif' , 'Modified_Fdir_8.tif' , 'Valley_Network_Order.tif' , head_ele , 'Channel_Network.tif')
-        Valley_Fun.stream_to_line(map_file_path, map_file_path, 'Channel_Network.tif' , 'Modified_Fdir_8.tif' , 'Channel_Network.shp')
+        if option_channel_head == 'CH_ON':
+                print '7. Channel Head Extraction'
+                head_ele = Channel_Fun.channel_head_find(por_file_path , map_file_path, text_file_path , 'Modified_Facc_8.tif' , 'Modified_Fdir_8.tif', 'Curvature.tif' ,'Fill_Dem.tif' ,80 , \
+                number_contour , 'contour_cluster' , 0)
+                arcpy.env.extent = DEM_file_path
+                Valley_Fun.head_delete(map_file_path , map_file_path  , 'Fill_Dem.tif' , 'Valley_Network.tif' , 'Modified_Fdir_8.tif' , 'Valley_Network_Order.tif' , head_ele , 'Channel_Network.tif')
+                Valley_Fun.stream_to_line(map_file_path, map_file_path, 'Channel_Network.tif' , 'Modified_Fdir_8.tif' , 'Channel_Network.shp')
 
-        shutil.rmtree(text_file_path)
-        shutil.rmtree(por_file_path)
+                shutil.rmtree(text_file_path)
+                shutil.rmtree(por_file_path)
+        elif option_channel_head == 'CH_OFF':
+                print '7. Channel Head Extraction is not requested'
 
 
 

@@ -4,10 +4,10 @@ import Valley_Channel_Extraction
 TauDEM_path = "C:\\Program Files\\TauDEM\\TauDEM5Arc\\TauDEM Tools.tbx"
 
 # Output folder
-output_folder_path = "Z:\\ACTIVE\\MiladHooshyar\\Input_Angel\\Indian_Creek\\Output_Valley"
+output_folder_path = "C:\\Data\\Codes\\Comb_Code\\Output"
 # Input DEM
-DEM_file_path = "C:\\Data\\Output\\Channel_Paper\\IC\\maps\\0\\OD.tif"
-cell_size = 1 # in DEM uint
+DEM_file_path = "C:\\Data\\Codes\\Comb_Code\\Input\\gro_DEM.tif"
+cell_size = 0.5 # in DEM uint
 unit = 'm' # ft or m
 
 # Filtering paramters
@@ -19,6 +19,10 @@ connect_ratio = 20
 # Number of contours
 number_contour = 30
 
+#CH_ON : perfrming channel head identification
+#CH_OFF : without channel head identification
+option_channel_head = 'CH_OFF' 
+
 
 Valley_Channel_Extraction.main(TauDEM_path , output_folder_path , DEM_file_path, cell_size, unit, \
-            num_iter, connect_ratio, number_contour)
+            num_iter, connect_ratio, number_contour , option_channel_head)
