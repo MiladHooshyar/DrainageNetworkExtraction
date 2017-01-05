@@ -50,3 +50,7 @@ After setting the parameters, one can execute “Run.py” to extract the valley and
 ## C. Publications
 
 1. Hooshyar, M., Wang, D., Kim, S., Medeiros, S. C. and Hagen, S. C. (2016), Valley and channel networks extraction based on local topographic curvature and K-means clustering of contours. Water Resour. Res.. Accepted Author Manuscript. doi:10.1002/2015WR018479.
+
+
+## D. Updates
+1. Equation (1) in Hooshyar et al. (2016) in WRR is introduced as contour curvature which is consistant with the definition provided by Pelletier (2013). However, the accurate name for equation (1) would be tangential curvature as stated in Clubb (2014) and Mitasova and Hofierka (1993). 
