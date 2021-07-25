@@ -5,28 +5,28 @@ This is a Python code to extract channel and valley networks for high resolution
 
 The required python libraries are:
 
-1. �arcpy� library: this library is included with ArcGIS package. computer, the �arcpy� library. It is recommended to use 64-bit python which is available on new versions of ArcGIS. 64-bit background geoprocessing is also available for older versions at http://resources.arcgis.com/en/help/main/10.1/index.html#/Background_Geoprocessing_64_bit/002100000040000000/.
+1. arcpy library: this library is included with ArcGIS package. computer, the �arcpy� library. It is recommended to use 64-bit python which is available on new versions of ArcGIS. 64-bit background geoprocessing is also available for older versions at http://resources.arcgis.com/en/help/main/10.1/index.html#/Background_Geoprocessing_64_bit/002100000040000000/.
 
-2. �numpy�, �scipy� and �matplotlib� libraries.
+2. numpy, scipy and matplotlib libraries.
 
-3. �TauDEM� toolbox: �TauDEM� can be downloaded from (http://hydrology.usu.edu/taudem/taudem5/downloads.html). By default, the installation path is (C:\Program Files\TauDEM). Before running the code, this path should be given as an input.
+3. TauDEM toolbox: TauDEM can be downloaded from (http://hydrology.usu.edu/taudem/taudem5/downloads.html). By default, the installation path is (C:\Program Files\TauDEM). Before running the code, this path should be given as an input.
 
 
 ## B. Code structure
 
-1. �main.py� is the file for setting the parameters and running the code.
+1. main.py is the file for setting the parameters and running the code.
 
-2. �Valley_Channel_Extraction.py� is the main code which calls the functions from �Channel_Fun.py� and �Valley_Fun.py� to delineate valley and channel networks.
+2. Valley_Channel_Extraction.py is the main code which calls the functions from Channel_Fun.py and Valley_Fun.py to delineate valley and channel networks.
 
-3. �Valley_Fun.py� contains the functions for valley network delineation.
+3. Valley_Fun.py contains the functions for valley network delineation.
 
-4. �Channel_Fun.py� includes the functions for channel head identification.
+4. Channel_Fun.py includes the functions for channel head identification.
 
 ## C. Inputs
 
-Before running the code, there are some parameters which should be set in �Run.py� including.
+Before running the code, there are some parameters which should be set in Run.py including.
 
-1. �TauDEM� toolbox folder path which is specified during the installation of �TauDEM� (TauDEM_path).
+1. TauDEM toolbox folder path which is specified during the installation of TauDEM (TauDEM_path).
 
 2. The path to the Output folder (output_folder_path).
 
@@ -45,7 +45,7 @@ Before running the code, there are some parameters which should be set in �Run
 9. The option for performing channel head identification (option_channel_head).  CH_ON : performing channel head identification, CH_OFF : without channel head identification
 
 
-After setting the parameters, one can execute �Run.py� to extract the valley and channel networks. The output files will be saved in a folder called �maps� in the specified Output folder path.
+After setting the parameters, one can execute Run.py to extract the valley and channel networks. The output files will be saved in a folder called maps in the specified Output folder path.
 
 ## C. Publications
 
